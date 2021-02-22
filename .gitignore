@@ -1,4 +1,4 @@
-./channel-artifacts
-./crypto-config
-./scripts
-./server/query.js
+channel-artifacts
+crypto-config
+scripts
+server/query.js
