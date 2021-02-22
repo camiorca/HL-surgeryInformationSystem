@@ -1,1 +1,0 @@
-Error: failed to create deliver client for orderer: orderer client failed to connect to orderer.example.com:7050: failed to create new connection: connection error: desc = "transport: error while dialing: dial tcp 172.25.0.5:7050: connect: connection refused"
