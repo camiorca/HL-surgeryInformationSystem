@@ -1,0 +1,60 @@
+{
+    "name": "surgery-chain-medplace1",
+    "version": "1.0.0",
+    "x-type":"hlfv1",
+    "client":{
+        "organization": "medplace1",
+        "connection":{
+            "timeout":{
+                "peer":{
+                    "endorser": 300
+                }
+            }
+        }
+    },
+    "channels":{
+        "mychannel":{
+            "orderers":[
+                "orderer.example.com"
+            ],
+            "peers":{
+                "peer0.medplace1.example.com":{}
+            }
+        }
+    },
+    "organizations":{
+        "medplace1":{
+            "mspid": "Hospital1MSP",
+            "peers":[
+                "peer0.medplace1.example.com"
+            ],
+            "certificateAuthorities":[
+                "ca.medplace1.example.com"
+            ]
+        }
+    },
+    "peers": {
+        "peer0.medplace1.example.com":{
+            "url": "grpcs://localhost:7051",
+            "tlsCACerts":{
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICfDCCAiOgAwIBAgIRANQN4V1NtYJFW/HS5G1nxxIwCgYIKoZIzj0EAwIwgYAx\nCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g\nRnJhbmNpc2NvMR4wHAYDVQQKExVtZWRwbGFjZTEuZXhhbXBsZS5jb20xJDAiBgNV\nBAMTG3Rsc2NhLm1lZHBsYWNlMS5leGFtcGxlLmNvbTAeFw0yMDEyMjYwMzA4MDBa\nFw0zMDEyMjQwMzA4MDBaMGAxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9y\nbmlhMRYwFAYDVQQHEw1TYW4gRnJhbmNpc2NvMSQwIgYDVQQDExtwZWVyMC5tZWRw\nbGFjZTEuZXhhbXBsZS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARzhdxK\nvlC4ERlADXNV5GlGecWfReH5WMrd4ayxqlhv4ddzNPx5gW/qg2g7VIA8tOrngdNr\nwU1FFkm4o0FOr5Zho4GcMIGZMA4GA1UdDwEB/wQEAwIFoDAdBgNVHSUEFjAUBggr\nBgEFBQcDAQYIKwYBBQUHAwIwDAYDVR0TAQH/BAIwADArBgNVHSMEJDAigCCFma2l\nDV66H6uBU5FcT78RJgzHhoHlLdScBE0Uw+vBVDAtBgNVHREEJjAkghtwZWVyMC5t\nZWRwbGFjZTEuZXhhbXBsZS5jb22CBXBlZXIwMAoGCCqGSM49BAMCA0cAMEQCIH8w\nqHPMID/ZJJa3Qz3272QS7fhLKI4mpn8YIbmkGvjzAiAH/v8ybpqJ0aP4nRuuuVSh\nV4MsMtUszhDMzdOpMrWi8Q==\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions":{
+                "ssl-target-name-override": "peer0.medplace1.example.com",
+                "hostnameOverride": "peer0.medplace1.example.com"
+            }
+        }
+    },
+    "certificateAuthorities":{
+        "ca.medplace1.example.com":{
+            "url": "https://localhost:7054",
+            "caName": "ca-hospital1",
+            "tlsCACerts":{
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICZDCCAgugAwIBAgIQMX37Eim2Gfdoo4z9PNGk2DAKBggqhkjOPQQDAjB9MQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEeMBwGA1UEChMVbWVkcGxhY2UxLmV4YW1wbGUuY29tMSEwHwYDVQQD\nExhjYS5tZWRwbGFjZTEuZXhhbXBsZS5jb20wHhcNMjAxMjI2MDMwODAwWhcNMzAx\nMjI0MDMwODAwWjB9MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEW\nMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEeMBwGA1UEChMVbWVkcGxhY2UxLmV4YW1w\nbGUuY29tMSEwHwYDVQQDExhjYS5tZWRwbGFjZTEuZXhhbXBsZS5jb20wWTATBgcq\nhkjOPQIBBggqhkjOPQMBBwNCAATzuOIqce/MANiSFzK1nCam3fRS7A6Hb7Wx8iAk\nTLMG41vdlztUDG0E+SSVTrrWINviB1fWPO/JgQXg+kLWYn8ao20wazAOBgNVHQ8B\nAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMA8GA1UdEwEB\n/wQFMAMBAf8wKQYDVR0OBCIEIEOhWad6n0VIOh0yn5q7ckdh9RE97dSyOkpHt4of\nr78qMAoGCCqGSM49BAMCA0cAMEQCIBCraqxKMVJ6XI9uxwpTtV2OUNYHKVQUIM9i\nqMzzBgOkAiBknEh1fy06AbHF510axeEkp2u69JReTLe0oJ3sVjGVaw==\n-----END CERTIFICATE-----\n"
+            },
+            "httpOptions":{
+                "verify": "false"
+            }
+        }
+    }
+}
